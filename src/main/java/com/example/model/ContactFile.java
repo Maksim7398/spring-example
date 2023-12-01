@@ -1,9 +1,7 @@
-package com.example.springexample1.model;
+package com.example.example.model;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +10,6 @@ import java.util.List;
 public class ContactFile {
     @Value("${contact.file.location}")
     private String pathFile;
-
-
-
     public List<Contact> addContactFromFile() {
         String everything = "";
         List<Contact> contactList = new ArrayList<>();

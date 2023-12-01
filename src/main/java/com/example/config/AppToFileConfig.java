@@ -1,16 +1,13 @@
-package com.example.springexample1.config;
+package com.example.example.config;
 
-import com.example.springexample1.model.ContactFile;
+import com.example.example.model.ContactFile;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 
 import java.util.Objects;
-
 @Configuration
 public class AppToFileConfig {
     @Bean
@@ -21,11 +18,9 @@ public class AppToFileConfig {
     public static PropertySourcesPlaceholderConfigurer properties(){// бин для того чтобы получать данные из ресурсов
         PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
         YamlPropertiesFactoryBean yamlPropertiesFactoryBean = new YamlPropertiesFactoryBean();
-        yamlPropertiesFactoryBean.setResources(new ClassPathResource("application.yaml"));
-
+        yamlPropertiesFactoryBean.setResources(new ClassPathResource("application-file.yaml"));
         configurer.setProperties(Objects.requireNonNull(yamlPropertiesFactoryBean.getObject()));
 
         return configurer;
     }
-
 }
