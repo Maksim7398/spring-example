@@ -1,9 +1,9 @@
-package com.example.example;
-import com.example.example.config.AppConfig;
-import com.example.example.config.AppToFileConfig;
+package com.example;
+import com.example.config.AppConfig;
+import com.example.config.AppToFileConfig;
 
-import com.example.example.model.ContactCMD;
-import com.example.example.model.ContactFile;
+import com.example.model.ContactCMD;
+import com.example.model.ContactFile;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -19,7 +19,7 @@ public class Main {
         System.out.println("finish work, click to 'q' ");
         while (true) {
             String[] contactIn = scanner.nextLine().split(",");
-            context.getBean(ContactCMD.class).addNewContact(contactIn);
+            context.getBean(ContactCMD.class).addContact(contactIn);
             if (contactIn[0].equals("q")) {
                 break;
             }

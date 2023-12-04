@@ -1,7 +1,8 @@
-package com.example.example.model;
+package com.example.model;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public class ContactFile {
     @Value("${contact.file.location}")
     private String pathFile;
+
     public List<Contact> addContactFromFile() {
         String everything = "";
         List<Contact> contactList = new ArrayList<>();
@@ -21,11 +23,11 @@ public class ContactFile {
                 sb.append(System.lineSeparator());
                 line = br.readLine();
             }
-             everything = sb.toString();
+            everything = sb.toString();
             String[] split = everything.split("\n");
-            for (int i = 0; i < split.length;i++){
+            for (int i = 0; i < split.length; i++) {
                 String[] cont = split[i].split(",");
-                contactList.add(new Contact(cont[0],cont[1],cont[2]));
+                contactList.add(new Contact(cont[0], cont[1], cont[2]));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

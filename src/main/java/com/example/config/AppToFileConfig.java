@@ -1,6 +1,6 @@
-package com.example.example.config;
+package com.example.config;
 
-import com.example.example.model.ContactFile;
+import com.example.model.ContactFile;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
